@@ -45,3 +45,42 @@ Dùng cùng dữ liệu, model và câu hỏi cho cả ba cấu hình. Tách **1
 | Cách nộp bài | [SUBMISSION.md](SUBMISSION.md) |
 
 [data/format-example.json](data/format-example.json) chỉ minh họa định dạng, không phải corpus đủ điều kiện. Phần xử lý và benchmark do bạn tự hiện thực; không bắt buộc xây chatbot.
+
+---
+
+## Triển khai & tái lập kết quả (Reproducibility)
+
+### Cấu trúc tệp đã hoàn thiện
+
+- **Dữ liệu & manifest**: [data/manifest.json](data/manifest.json) (130 trang nội dung từ Chapters 1–3 của `OpenStax Introductory Statistics 2e`; bản trích đoạn 130 trang kèm theo tại `starter/data/introductory-statistics-2e_chapters-1-3_selected-130p.pdf` [pp. 1–40 = gốc 17–56, pp. 41–96 = gốc 77–132, pp. 97–130 = gốc 179–212], còn file PDF đầy đủ `847` trang `starter/data/introductory-statistics-2e_-_WEB.pdf` được ignore khỏi Git — tải theo hướng dẫn trong `manifest.json` nếu cần chạy lại `src.run` khớp đúng số trang gốc).
+- **Bộ benchmark**: [benchmark/questions.json](benchmark/questions.json) (20 câu: `15 dev` + `5 test`, tách rời theo section và trang vàng; 7 câu có metadata filter gồm 4 dev + 3 test).
+- **Pipeline (`starter/src/`)**:
+  - [starter/src/ingestion.py](starter/src/ingestion.py): đọc PDF bằng `pypdf`, chuẩn hóa NFKC, loại running footer, tái tạo đoạn văn, gán metadata (`chapter`, `content_type`, `section`, `book_page`) và ghi log chẩn đoán (`low_text_density`, `omitted_inline_formula_glyphs`).
+  - [starter/src/chunking.py](starter/src/chunking.py): `fixed_size(size=500, overlap=50)` (Strategy A) và `by_paragraph(max_size=1000)` (Strategy B/C).
+  - [starter/src/embeddings.py](starter/src/embeddings.py): `MyEmbedder` dùng local CPU `sentence-transformers/all-MiniLM-L6-v2` (384 chiều, chuẩn hóa L2, không fallback mock).
+  - [starter/src/store.py](starter/src/store.py): `PgVectorStore` kết nối PostgreSQL 16.16 + pgvector 0.8.7, tìm kiếm cosine chính xác (`<=>`), lọc SQL theo whitelist (`ALLOWED_FILTER_KEYS`), upsert idempotent và xóa chunk lỗi thời.
+  - [starter/src/evaluation.py](starter/src/evaluation.py) & [starter/src/run.py](starter/src/run.py): tính `Hit@1`, `Evidence Hit@3` (single-chunk), tách riêng lỗi chia cắt chunk (`split_evidence_union_top3`), kiểm tra tuân thủ filter, xuất trace & gói mẫu kiểm định.
+- **Kết quả & báo cáo**:
+  - [artifacts/experiment_log.csv](artifacts/experiment_log.csv)
+  - [results/summary.json](results/summary.json), [results/traces_A.json](results/traces_A.json), [results/traces_B.json](results/traces_B.json), [results/traces_C.json](results/traces_C.json)
+  - [results/ingestion_errors.json](results/ingestion_errors.json), [results/audit_samples.json](results/audit_samples.json), [results/manual_audit.json](results/manual_audit.json)
+  - [report/individual/2A202603446_NguyenThanhTung.md](report/individual/2A202603446_NguyenThanhTung.md)
+
+### Lệnh chạy tái lập từ gốc repo
+
+1. Khởi động PostgreSQL + pgvector và tạo cấu hình cục bộ trong `starter/`:
+
+```powershell
+cd starter
+Copy-Item .env.example .env   # điền EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+docker compose -p day6_student_starter up -d --wait
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe scripts\check_setup.py
+```
+
+2. Chạy toàn bộ pipeline ingestion, embedding, kiểm tra idempotency và benchmark A/B/C:
+
+```powershell
+cd starter
+.\.venv\Scripts\python.exe -m src.run
+```

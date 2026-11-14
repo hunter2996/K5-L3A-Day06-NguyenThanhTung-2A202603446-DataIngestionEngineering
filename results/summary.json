@@ -1,0 +1,356 @@
+{
+  "corpus": {
+    "source_id": "openstax-intro-stats-2e",
+    "local_file": "starter/data/introductory-statistics-2e_-_WEB.pdf",
+    "requested_pages": 130,
+    "loaded_pages": 130,
+    "normalized_total_chars": 265356,
+    "pdf_extract_seconds": 3.34,
+    "ingestion_diagnostics_count": 12
+  },
+  "embedding": {
+    "provider": "sentence-transformers (local)",
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimensions": 384,
+    "normalized_l2": true,
+    "total_doc_texts_embedded": 1006,
+    "total_doc_chars_embedded": 555619,
+    "total_query_calls": 20,
+    "total_embed_seconds": 32.304,
+    "strategy_A_doc_embed_seconds": 18.543,
+    "strategy_B_doc_embed_seconds": 13.51,
+    "strategy_C_note": "Reuses Strategy B chunk vectors identically.",
+    "query_embed_seconds_20q": 0.262
+  },
+  "vector_store": {
+    "engine": "PostgreSQL + pgvector",
+    "pgvector_version": "0.8.7",
+    "metric": "cosine",
+    "search_mode": "exact (<=> sequential cosine distance)",
+    "upsert_counts": {
+      "A": {
+        "upserted": 641,
+        "deleted_obsolete": 0,
+        "total_in_strategy": 641,
+        "upsert_seconds": 0.307
+      },
+      "B": {
+        "upserted": 365,
+        "deleted_obsolete": 0,
+        "total_in_strategy": 365,
+        "upsert_seconds": 0.155
+      },
+      "C": {
+        "upserted": 365,
+        "deleted_obsolete": 0,
+        "total_in_strategy": 365,
+        "upsert_seconds": 0.15
+      }
+    },
+    "idempotency_check_B": {
+      "count_before": 365,
+      "count_after": 365,
+      "reingest_result": {
+        "upserted": 365,
+        "deleted_obsolete": 0,
+        "total_in_strategy": 365
+      },
+      "passed": true
+    },
+    "search_seconds_20q": {
+      "A": 0.527,
+      "B": 0.398,
+      "C": 0.457
+    }
+  },
+  "chunk_stats": {
+    "A": {
+      "count": 641,
+      "total_chars": 290721,
+      "min": 64,
+      "median": 500,
+      "mean": 453.5,
+      "p95": 500,
+      "max": 500
+    },
+    "B": {
+      "count": 365,
+      "total_chars": 264898,
+      "min": 79,
+      "median": 811,
+      "mean": 725.7,
+      "p95": 989,
+      "max": 1000
+    },
+    "C": {
+      "count": 365,
+      "total_chars": 264898,
+      "min": 79,
+      "median": 811,
+      "mean": 725.7,
+      "p95": 989,
+      "max": 1000
+    }
+  },
+  "benchmark": {
+    "total_questions": 20,
+    "dev_count": 15,
+    "test_count": 5,
+    "filter_questions_total": 7,
+    "filter_questions_dev": 4,
+    "filter_questions_test": 3
+  },
+  "retrieval_metrics": {
+    "A": {
+      "dev": {
+        "total": 15,
+        "hit1_count": 4,
+        "hit1_rate": 0.2667,
+        "evidence_hit3_count": 5,
+        "evidence_hit3_rate": 0.3333,
+        "source_page_hit1_count": 12,
+        "source_page_hit1_rate": 0.8,
+        "source_page_hit3_count": 14,
+        "source_page_hit3_rate": 0.9333,
+        "split_evidence_union_top3_count": 4,
+        "split_evidence_union_top3_ids": [
+          "q01",
+          "q02",
+          "q05",
+          "q06"
+        ],
+        "missed_question_ids": [
+          "q01",
+          "q02",
+          "q05",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11",
+          "q15"
+        ],
+        "scoped_questions_count": 4,
+        "scoped_hits_total": 12,
+        "scoped_hits_matching_target_filter": 12,
+        "applied_filter_queries": 0,
+        "filter_compliant_queries": null,
+        "applied_filter_hits_total": 0,
+        "applied_filter_hits_compliant": null
+      },
+      "test": {
+        "total": 5,
+        "hit1_count": 2,
+        "hit1_rate": 0.4,
+        "evidence_hit3_count": 2,
+        "evidence_hit3_rate": 0.4,
+        "source_page_hit1_count": 5,
+        "source_page_hit1_rate": 1.0,
+        "source_page_hit3_count": 5,
+        "source_page_hit3_rate": 1.0,
+        "split_evidence_union_top3_count": 1,
+        "split_evidence_union_top3_ids": [
+          "q16"
+        ],
+        "missed_question_ids": [
+          "q16",
+          "q18",
+          "q20"
+        ],
+        "scoped_questions_count": 3,
+        "scoped_hits_total": 9,
+        "scoped_hits_matching_target_filter": 8,
+        "applied_filter_queries": 0,
+        "filter_compliant_queries": null,
+        "applied_filter_hits_total": 0,
+        "applied_filter_hits_compliant": null
+      },
+      "overall": {
+        "total": 20,
+        "hit1_count": 6,
+        "hit1_rate": 0.3,
+        "evidence_hit3_count": 7,
+        "evidence_hit3_rate": 0.35,
+        "source_page_hit1_count": 17,
+        "source_page_hit1_rate": 0.85,
+        "source_page_hit3_count": 19,
+        "source_page_hit3_rate": 0.95,
+        "split_evidence_union_top3_count": 5,
+        "split_evidence_union_top3_ids": [
+          "q01",
+          "q02",
+          "q05",
+          "q06",
+          "q16"
+        ],
+        "missed_question_ids": [
+          "q01",
+          "q02",
+          "q05",
+          "q06",
+          "q07",
+          "q08",
+          "q09",
+          "q10",
+          "q11",
+          "q15",
+          "q16",
+          "q18",
+          "q20"
+        ],
+        "scoped_questions_count": 7,
+        "scoped_hits_total": 21,
+        "scoped_hits_matching_target_filter": 20,
+        "applied_filter_queries": 0,
+        "filter_compliant_queries": null,
+        "applied_filter_hits_total": 0,
+        "applied_filter_hits_compliant": null
+      }
+    },
+    "B": {
+      "dev": {
+        "total": 15,
+        "hit1_count": 8,
+        "hit1_rate": 0.5333,
+        "evidence_hit3_count": 12,
+        "evidence_hit3_rate": 0.8,
+        "source_page_hit1_count": 11,
+        "source_page_hit1_rate": 0.7333,
+        "source_page_hit3_count": 13,
+        "source_page_hit3_rate": 0.8667,
+        "split_evidence_union_top3_count": 0,
+        "split_evidence_union_top3_ids": [],
+        "missed_question_ids": [
+          "q03",
+          "q07",
+          "q10"
+        ],
+        "scoped_questions_count": 4,
+        "scoped_hits_total": 12,
+        "scoped_hits_matching_target_filter": 11,
+        "applied_filter_queries": 0,
+        "filter_compliant_queries": null,
+        "applied_filter_hits_total": 0,
+        "applied_filter_hits_compliant": null
+      },
+      "test": {
+        "total": 5,
+        "hit1_count": 5,
+        "hit1_rate": 1.0,
+        "evidence_hit3_count": 5,
+        "evidence_hit3_rate": 1.0,
+        "source_page_hit1_count": 5,
+        "source_page_hit1_rate": 1.0,
+        "source_page_hit3_count": 5,
+        "source_page_hit3_rate": 1.0,
+        "split_evidence_union_top3_count": 0,
+        "split_evidence_union_top3_ids": [],
+        "missed_question_ids": [],
+        "scoped_questions_count": 3,
+        "scoped_hits_total": 9,
+        "scoped_hits_matching_target_filter": 7,
+        "applied_filter_queries": 0,
+        "filter_compliant_queries": null,
+        "applied_filter_hits_total": 0,
+        "applied_filter_hits_compliant": null
+      },
+      "overall": {
+        "total": 20,
+        "hit1_count": 13,
+        "hit1_rate": 0.65,
+        "evidence_hit3_count": 17,
+        "evidence_hit3_rate": 0.85,
+        "source_page_hit1_count": 16,
+        "source_page_hit1_rate": 0.8,
+        "source_page_hit3_count": 18,
+        "source_page_hit3_rate": 0.9,
+        "split_evidence_union_top3_count": 0,
+        "split_evidence_union_top3_ids": [],
+        "missed_question_ids": [
+          "q03",
+          "q07",
+          "q10"
+        ],
+        "scoped_questions_count": 7,
+        "scoped_hits_total": 21,
+        "scoped_hits_matching_target_filter": 18,
+        "applied_filter_queries": 0,
+        "filter_compliant_queries": null,
+        "applied_filter_hits_total": 0,
+        "applied_filter_hits_compliant": null
+      }
+    },
+    "C": {
+      "dev": {
+        "total": 15,
+        "hit1_count": 8,
+        "hit1_rate": 0.5333,
+        "evidence_hit3_count": 13,
+        "evidence_hit3_rate": 0.8667,
+        "source_page_hit1_count": 11,
+        "source_page_hit1_rate": 0.7333,
+        "source_page_hit3_count": 14,
+        "source_page_hit3_rate": 0.9333,
+        "split_evidence_union_top3_count": 0,
+        "split_evidence_union_top3_ids": [],
+        "missed_question_ids": [
+          "q07",
+          "q10"
+        ],
+        "scoped_questions_count": 4,
+        "scoped_hits_total": 12,
+        "scoped_hits_matching_target_filter": 12,
+        "applied_filter_queries": 4,
+        "filter_compliant_queries": 4,
+        "applied_filter_hits_total": 12,
+        "applied_filter_hits_compliant": 12
+      },
+      "test": {
+        "total": 5,
+        "hit1_count": 5,
+        "hit1_rate": 1.0,
+        "evidence_hit3_count": 5,
+        "evidence_hit3_rate": 1.0,
+        "source_page_hit1_count": 5,
+        "source_page_hit1_rate": 1.0,
+        "source_page_hit3_count": 5,
+        "source_page_hit3_rate": 1.0,
+        "split_evidence_union_top3_count": 0,
+        "split_evidence_union_top3_ids": [],
+        "missed_question_ids": [],
+        "scoped_questions_count": 3,
+        "scoped_hits_total": 9,
+        "scoped_hits_matching_target_filter": 9,
+        "applied_filter_queries": 3,
+        "filter_compliant_queries": 3,
+        "applied_filter_hits_total": 9,
+        "applied_filter_hits_compliant": 9
+      },
+      "overall": {
+        "total": 20,
+        "hit1_count": 13,
+        "hit1_rate": 0.65,
+        "evidence_hit3_count": 18,
+        "evidence_hit3_rate": 0.9,
+        "source_page_hit1_count": 16,
+        "source_page_hit1_rate": 0.8,
+        "source_page_hit3_count": 19,
+        "source_page_hit3_rate": 0.95,
+        "split_evidence_union_top3_count": 0,
+        "split_evidence_union_top3_ids": [],
+        "missed_question_ids": [
+          "q07",
+          "q10"
+        ],
+        "scoped_questions_count": 7,
+        "scoped_hits_total": 21,
+        "scoped_hits_matching_target_filter": 21,
+        "applied_filter_queries": 7,
+        "filter_compliant_queries": 7,
+        "applied_filter_hits_total": 21,
+        "applied_filter_hits_compliant": 21
+      }
+    }
+  }
+}

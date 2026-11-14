@@ -1,0 +1,409 @@
+{
+  "metadata": {
+    "corpus_id": "openstax-intro-stats-2e",
+    "split_strategy": "Section-disjoint and gold-page-disjoint split across Chapters 1-3: sections 1.4, 2.4, 2.6, 3.4, and Ch3 Key Terms (Axioms) are held out exclusively for test (5 questions); remaining sections 1.1-1.3, 2.2-2.3, 2.5, 2.7, 3.1-3.3 are used for dev (15 questions). Residual leakage risk: dev and test still originate from the same textbook and authors.",
+    "selection_criterion": "Pre-registered before viewing test results: prioritize (1) dev Evidence Hit@3, (2) manual Chunk Coherence & Grounding Quality (/2), (3) dev Hit@1 and filter compliance, (4) ingestion/storage/latency efficiency.",
+    "created_before_retrieval_runs": true
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "split": "dev",
+      "type": "direct",
+      "section": "1.1 Definitions of Statistics, Probability, and Key Terms",
+      "question": "What is the difference between descriptive statistics and inferential statistics?",
+      "expected_answer": "Descriptive statistics involves organizing and summarizing data (using graphs or numerical summaries like an average), whereas inferential statistics uses formal probability-based methods to draw conclusions from data and quantify confidence in those conclusions.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 18,
+      "evidence_quote": "Organizing and summarizing data is called descriptive statistics. Two ways to summarize data are by graphing and by using numbers (for example, finding an average). After you have studied probability and probability distributions, you will use formal methods for drawing conclusions from \"good\" data. The formal methods are called inferential statistics. Statistical inference uses probability to determine how confident we can be that our conclusions are correct.",
+      "evidence_clauses": [
+        "Organizing and summarizing data is called descriptive statistics.",
+        "The formal methods are called inferential statistics.",
+        "Statistical inference uses probability to determine how confident we can be that our conclusions are correct."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q02",
+      "split": "dev",
+      "type": "direct",
+      "section": "1.1 Definitions of Statistics, Probability, and Key Terms",
+      "question": "How does a statistic differ from a parameter in statistics?",
+      "expected_answer": "A statistic is a numerical property calculated from a sample, whereas a parameter is a numerical characteristic of the entire population that can be estimated using a statistic.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 19,
+      "evidence_quote": "A statistic is a number that represents a property of the sample. For example, if we consider one math class to be a sample of the population of all math classes, then the average number of points earned by students in that one math class at the end of the term is an example of a statistic. The statistic is an estimate of a population parameter. A parameter is a numerical characteristic of the whole population that can be estimated by a statistic.",
+      "evidence_clauses": [
+        "A statistic is a number that represents a property of the sample.",
+        "A parameter is a numerical characteristic of the whole population that can be estimated by a statistic."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q03",
+      "split": "dev",
+      "type": "conditional",
+      "section": "1.2 Data, Sampling, and Variation in Data and Sampling",
+      "question": "In Chapter 1 (Sampling and Data), when should you use a bar graph instead of a pie chart for categorical percentages?",
+      "expected_answer": "Use a bar graph instead of a pie chart when category percentages sum to more than 100% (e.g., overlapping categories) or less than 100% (e.g., omitted categories or missing data); a pie chart cannot be used in either case.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 27,
+      "evidence_quote": "Sometimes percentages add up to be more than 100% (or less than 100%). In the graph, the percentages add to more than 100% because students can be in more than one category. A bar graph is appropriate to compare the relative size of the categories. A pie chart cannot be used. It also could not be used if the percentages added to less than 100%.",
+      "evidence_clauses": [
+        "Sometimes percentages add up to be more than 100% (or less than 100%).",
+        "A bar graph is appropriate to compare the relative size of the categories.",
+        "A pie chart cannot be used. It also could not be used if the percentages added to less than 100%."
+      ],
+      "alternative_gold": [],
+      "filter": {
+        "chapter": "chapter_1"
+      }
+    },
+    {
+      "id": "q04",
+      "split": "dev",
+      "type": "paraphrase",
+      "section": "1.2 Data, Sampling, and Variation in Data and Sampling",
+      "question": "How is a stratified random sample constructed from a population?",
+      "expected_answer": "Divide the population into subgroups called strata and then select a proportionate number of individuals from each stratum using simple random sampling.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 31,
+      "evidence_quote": "To choose a stratified sample, divide the population into groups called strata and then take a proportionate number from each stratum.",
+      "evidence_clauses": [
+        "divide the population into groups called strata and then take a proportionate number from each stratum."
+      ],
+      "alternative_gold": [
+        {
+          "gold_source_id": "openstax-intro-stats-2e",
+          "gold_page": 56,
+          "evidence_quote": "Stratified Sampling a method for selecting a random sample used to ensure that subgroups of the population are represented adequately; divide the population into groups (strata). Use simple random sampling to identify a proportionate number of individuals from each stratum.",
+          "evidence_clauses": [
+            "divide the population into groups (strata).",
+            "Use simple random sampling to identify a proportionate number of individuals from each stratum."
+          ]
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q05",
+      "split": "dev",
+      "type": "conditional",
+      "section": "1.2 Data, Sampling, and Variation in Data and Sampling",
+      "question": "In Chapter 1 (Sampling and Data), what distinguishes a sampling error from a nonsampling error, and how does increasing sample size affect sampling error?",
+      "expected_answer": "Sampling errors come from the sampling process itself (such as too small a sample), while nonsampling errors stem from external factors (such as a defective counting device). Larger samples generally produce smaller sampling error.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 32,
+      "evidence_quote": "The actual process of sampling causes sampling errors. For example, the sample may not be large enough. Factors not related to the sampling process cause nonsampling errors. A defective counting device can cause a nonsampling error. In reality, a sample will never be exactly representative of the population so there will always be some sampling error. As a rule, the larger the sample, the smaller the sampling error.",
+      "evidence_clauses": [
+        "The actual process of sampling causes sampling errors.",
+        "Factors not related to the sampling process cause nonsampling errors.",
+        "As a rule, the larger the sample, the smaller the sampling error."
+      ],
+      "alternative_gold": [],
+      "filter": {
+        "chapter": "chapter_1"
+      }
+    },
+    {
+      "id": "q06",
+      "split": "dev",
+      "type": "direct",
+      "section": "1.3 Frequency, Frequency Tables, and Levels of Measurement",
+      "question": "How does the interval scale level differ from the ordinal scale level, and why are Celsius and Fahrenheit temperatures interval scale data?",
+      "expected_answer": "Both are ordered, but ordinal data are qualitative without measurable differences whereas interval data are quantitative with meaningful differences and no absolute zero/minimum value. On Celsius and Fahrenheit scales, differences (e.g., 100 - 60 = 40) are meaningful, yet 0 degrees is not the lowest possible temperature because colder negative temperatures exist.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 38,
+      "evidence_quote": "Like data measured on an ordinal scale, data that are measured on an interval scale have a definite ordering. While ordinal scale data are categorical, or qualitative, interval scale data are numerical, or quantitative. It is possible to calculate differences between values measured on an interval scale. There is no minimum or \"zero\" value, however. Temperature scales like Celsius (C) and Fahrenheit (F) are measured by using the interval scale. In both temperature measurements, 40° is equal to 100° minus 60°. Differences make sense. But 0 degrees does not represent a minimum value. In both scales, 0 is not the absolute lowest temperature. Temperatures like -10° F and -15° C exist and are colder than 0.",
+      "evidence_clauses": [
+        "While ordinal scale data are categorical, or qualitative, interval scale data are numerical, or quantitative.",
+        "There is no minimum or \"zero\" value, however.",
+        "Temperature scales like Celsius (C) and Fahrenheit (F) are measured by using the interval scale.",
+        "But 0 degrees does not represent a minimum value."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q07",
+      "split": "dev",
+      "type": "direct",
+      "section": "2.2 Histograms, Frequency Polygons, and Time Series Graphs",
+      "question": "What is the rule of thumb for the minimum dataset size when choosing a histogram, and how are its boxes drawn?",
+      "expected_answer": "A histogram is recommended when a dataset contains 100 or more values, and it is drawn with contiguous (adjoining) boxes.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 87,
+      "evidence_quote": "One advantage of a histogram is that it can readily display large data sets. A rule of thumb is to use a histogram when the data set consists of 100 values or more. A histogram consists of contiguous (adjoining) boxes.",
+      "evidence_clauses": [
+        "A rule of thumb is to use a histogram when the data set consists of 100 values or more.",
+        "A histogram consists of contiguous (adjoining) boxes."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q08",
+      "split": "dev",
+      "type": "paraphrase",
+      "section": "2.2 Histograms, Frequency Polygons, and Time Series Graphs",
+      "question": "When is a time series graph used, and what variables are plotted on the horizontal and vertical axes?",
+      "expected_answer": "A time series graph is used when observations are paired with timestamps to preserve chronological order and show changes over time; the horizontal axis plots date or time increments and the vertical axis plots the measured variable.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 95,
+      "evidence_quote": "We can instead use the times given to impose a chronological order on the data. A graph that recognizes this ordering and displays the changing temperature as the month progresses is called a time series graph. To construct a time series graph, we must look at both pieces of our paired data set. We start with a standard Cartesian coordinate system. The horizontal axis is used to plot the date or time increments, and the vertical axis is used to plot the values of the variable that we are measuring.",
+      "evidence_clauses": [
+        "impose a chronological order on the data",
+        "called a time series graph.",
+        "The horizontal axis is used to plot the date or time increments, and the vertical axis is used to plot the values of the variable that we are measuring."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q09",
+      "split": "dev",
+      "type": "conditional",
+      "section": "2.3 Measures of the Location of the Data",
+      "question": "In Chapter 2 (Descriptive Statistics), how is the interquartile range (IQR) defined, and what thresholds identify a suspected potential outlier?",
+      "expected_answer": "The IQR is Q3 - Q1 (measuring the spread of the middle 50% of data). A value is suspected to be a potential outlier if it falls less than 1.5 * IQR below Q1 or more than 1.5 * IQR above Q3.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 99,
+      "evidence_quote": "The interquartile range is a number that indicates the spread of the middle half or the middle 50% of the data. It is the difference between the third quartile (Q3) and the first quartile (Q1). IQR = Q3 – Q1 The IQR can help to determine potential outliers. A value is suspected to be a potential outlier if it is less than (1.5)(IQR) below the first quartile or more than (1.5)(IQR) above the third quartile.",
+      "evidence_clauses": [
+        "difference between the third quartile (Q3) and the first quartile (Q1).",
+        "A value is suspected to be a potential outlier if it is less than (1.5)(IQR) below the first quartile or more than (1.5)(IQR) above the third quartile."
+      ],
+      "alternative_gold": [],
+      "filter": {
+        "chapter": "chapter_2"
+      }
+    },
+    {
+      "id": "q10",
+      "split": "dev",
+      "type": "paraphrase",
+      "section": "2.5 Measures of the Center of the Data",
+      "question": "Why is the median generally preferred over the mean when a dataset contains extreme values or outliers?",
+      "expected_answer": "Because the median is not affected by the exact numerical magnitudes of extreme outliers, making it a more representative measure of the center.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 110,
+      "evidence_quote": "The median is generally a better measure of the center when there are extreme values or outliers because it is not affected by the precise numerical values of the outliers.",
+      "evidence_clauses": [
+        "The median is generally a better measure of the center when there are extreme values or outliers because it is not affected by the precise numerical values of the outliers."
+      ],
+      "alternative_gold": [
+        {
+          "gold_source_id": "openstax-intro-stats-2e",
+          "gold_page": 112,
+          "evidence_quote": "The median is a better measure of the \"center\" than the mean because 49 of the values are 30,000 and one is 5,000,000. The 5,000,000 is an outlier.",
+          "evidence_clauses": [
+            "The median is a better measure of the \"center\" than the mean",
+            "is an outlier."
+          ]
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q11",
+      "split": "dev",
+      "type": "conditional",
+      "section": "2.7 Measures of the Spread of the Data",
+      "question": "Why does the sample variance formula divide by n - 1 instead of n?",
+      "expected_answer": "Because the sample variance is used to estimate the population variance, and theoretical mathematics shows that dividing by (n - 1) produces a better estimate of the population variance.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 123,
+      "evidence_quote": "For the sample variance, we divide by the sample size minus one (n – 1). Why not divide by n? The answer has to do with the population variance. The sample variance is an estimate of the population variance. Based on the theoretical mathematics that lies behind these calculations, dividing by (n – 1) gives a better estimate of the population variance.",
+      "evidence_clauses": [
+        "For the sample variance, we divide by the sample size minus one (n – 1).",
+        "dividing by (n – 1) gives a better estimate of the population variance."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q12",
+      "split": "dev",
+      "type": "direct",
+      "section": "2.7 Measures of the Spread of the Data",
+      "question": "According to Chebyshev's Rule, at least what percentages of data lie within 2, 3, and 4.5 standard deviations of the mean for any distribution?",
+      "expected_answer": "Regardless of distribution shape, at least 75% of data lie within 2 standard deviations, at least 89% within 3 standard deviations, and at least 95% within 4.5 standard deviations of the mean.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 129,
+      "evidence_quote": "For ANY data set, no matter what the distribution of the data is: • At least 75% of the data is within two standard deviations of the mean. • At least 89% of the data is within three standard deviations of the mean. • At least 95% of the data is within 4.5 standard deviations of the mean. • This is known as Chebyshev's Rule.",
+      "evidence_clauses": [
+        "At least 75% of the data is within two standard deviations of the mean.",
+        "At least 89% of the data is within three standard deviations of the mean.",
+        "At least 95% of the data is within 4.5 standard deviations of the mean.",
+        "Chebyshev's Rule."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q13",
+      "split": "dev",
+      "type": "direct",
+      "section": "3.1 Terminology",
+      "question": "What does the law of large numbers state as an experiment is repeated more and more times?",
+      "expected_answer": "As the number of repetitions of an experiment increases, the observed (empirical) relative frequency tends to get closer and closer to the theoretical probability.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 180,
+      "evidence_quote": "This important characteristic of probability experiments is known as the law of large numbers which states that as the number of repetitions of an experiment is increased, the relative frequency obtained in the experiment tends to become closer and closer to the theoretical probability.",
+      "evidence_clauses": [
+        "law of large numbers",
+        "as the number of repetitions of an experiment is increased, the relative frequency obtained in the experiment tends to become closer and closer to the theoretical probability."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q14",
+      "split": "dev",
+      "type": "conditional",
+      "section": "3.2 Independent and Mutually Exclusive Events",
+      "question": "In Chapter 3 (Probability Topics), why are events considered dependent when sampling without replacement, and what should you assume if you do not know whether A and B are independent?",
+      "expected_answer": "In sampling without replacement, a selected member can only be chosen once, so the first pick changes probabilities for the second pick, making events dependent. If independence is unknown, assume A and B are dependent until shown otherwise.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 185,
+      "evidence_quote": "Without replacement: When sampling is done without replacement, each member of a population may be chosen only once. In this case, the probabilities for the second pick are affected by the result of the first pick. The events are considered to be dependent or not independent. If it is not known whether A and B are independent or dependent, assume they are dependent until you can show otherwise.",
+      "evidence_clauses": [
+        "each member of a population may be chosen only once.",
+        "the probabilities for the second pick are affected by the result of the first pick.",
+        "assume they are dependent until you can show otherwise."
+      ],
+      "alternative_gold": [],
+      "filter": {
+        "chapter": "chapter_3"
+      }
+    },
+    {
+      "id": "q15",
+      "split": "dev",
+      "type": "direct",
+      "section": "3.3 Two Basic Rules of Probability",
+      "question": "What is the general Addition Rule for P(A OR B), and how does it simplify when A and B are mutually exclusive?",
+      "expected_answer": "The general Addition Rule is P(A OR B) = P(A) + P(B) - P(A AND B). When A and B are mutually exclusive, P(A AND B) = 0, so it simplifies to P(A OR B) = P(A) + P(B).",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 191,
+      "evidence_quote": "If A and B are defined on a sample space, then: P(A OR B) = P(A) + P(B) - P(A AND B). If A and B are mutually exclusive, then P(A AND B) = 0. Then P(A OR B) = P(A) + P(B) - P(A AND B) becomes P(A OR B) = P(A) + P(B).",
+      "evidence_clauses": [
+        "P(A OR B) = P(A) + P(B) - P(A AND B).",
+        "If A and B are mutually exclusive, then P(A AND B) = 0.",
+        "becomes P(A OR B) = P(A) + P(B)."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q16",
+      "split": "test",
+      "type": "direct",
+      "section": "1.4 Experimental Design and Ethics",
+      "question": "In Chapter 1 (Sampling and Data), why do researchers give a control group a placebo treatment, and what makes an experiment double-blind?",
+      "expected_answer": "A placebo treatment counters the power of suggestion and helps balance the psychological effect of participating in an experiment against active treatments. An experiment is double-blind when neither the subjects nor the researchers interacting with them know who receives the active treatment or the placebo.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 47,
+      "evidence_quote": "To counter the power of suggestion, researchers set aside one treatment group as a control group. This group is given a placebo treatment–an active treatment that cannot directly influence the response variable. The control group helps researchers balance the effects of being in an experiment with the effects of the active treatments. Of course, if you are participating in a study and you know that you are receiving a pill which contains no actual medication, then the power of suggestion is no longer a factor. Blinding or masking in a randomized experiment preserves the power of suggestion. When a person involved in a research study is blinded, they do not know who is receiving the active treatment(s) and who is receiving the placebo treatment. A double-blind experiment is one in which both the subjects and the researchers involved with the subjects are blinded.",
+      "evidence_clauses": [
+        "counter the power of suggestion",
+        "given a placebo treatment",
+        "balance the effects of being in an experiment with the effects of the active treatments.",
+        "A double-blind experiment is one in which both the subjects and the researchers involved with the subjects are blinded."
+      ],
+      "alternative_gold": [],
+      "filter": {
+        "chapter": "chapter_1"
+      }
+    },
+    {
+      "id": "q17",
+      "split": "test",
+      "type": "conditional",
+      "section": "2.4 Box Plots",
+      "question": "In a box-and-whisker plot, when do the whiskers NOT extend all the way to the minimum and maximum data values?",
+      "expected_answer": "When a box-and-whisker plot displays individual dots marking outlier values, the whiskers do not extend to the minimum and maximum values.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 107,
+      "evidence_quote": "You may encounter box-and-whisker plots that have dots marking outlier values. In those cases, the whiskers are not extending to the minimum and maximum values.",
+      "evidence_clauses": [
+        "dots marking outlier values.",
+        "the whiskers are not extending to the minimum and maximum values."
+      ],
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q18",
+      "split": "test",
+      "type": "paraphrase",
+      "section": "2.6 Skewness and the Mean, Median, and Mode",
+      "question": "In Chapter 2 (Descriptive Statistics), how do the mean and median compare in left-skewed, right-skewed, and symmetric distributions, and when is this rule an exception?",
+      "expected_answer": "In left-skewed distributions the mean is typically less than the median; in right-skewed distributions the mean is typically greater than the median; and in symmetric distributions they are approximately equal. However, this does not hold for every dataset—exceptions occur most commonly in sets of discrete data.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 117,
+      "evidence_quote": "The mean is affected by outliers that do not influence the median. Therefore, when the distribution of data is skewed to the left, the mean is often less than the median. When the distribution is skewed to the right, the mean is often greater than the median. In symmetric distributions, we expect the mean and median to be approximately equal in value. This is an important connection between the shape of the distribution and the relationship of the mean and median. It is not, however, true for every data set. The most common exceptions occur in sets of discrete data.",
+      "evidence_clauses": [
+        "skewed to the left, the mean is often less than the median.",
+        "skewed to the right, the mean is often greater than the median.",
+        "In symmetric distributions, we expect the mean and median to be approximately equal in value.",
+        "The most common exceptions occur in sets of discrete data."
+      ],
+      "alternative_gold": [],
+      "filter": {
+        "chapter": "chapter_2"
+      }
+    },
+    {
+      "id": "q19",
+      "split": "test",
+      "type": "paraphrase",
+      "section": "3.4 Contingency Tables",
+      "question": "What does a contingency table show, and why is it especially helpful in probability analysis?",
+      "expected_answer": "A contingency table displays sample values across two variables that may be dependent (contingent) on each other, making it easy to calculate probabilities—especially conditional probabilities.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 195,
+      "evidence_quote": "A contingency table provides a way of portraying data that can facilitate calculating probabilities. The table helps in determining conditional probabilities quite easily. The table displays sample values in relation to two different variables that may be dependent or contingent on one another.",
+      "evidence_clauses": [
+        "The table helps in determining conditional probabilities quite easily.",
+        "displays sample values in relation to two different variables that may be dependent or contingent on one another."
+      ],
+      "alternative_gold": [
+        {
+          "gold_source_id": "openstax-intro-stats-2e",
+          "gold_page": 212,
+          "evidence_quote": "contingency table the method of displaying a frequency distribution as a table with rows and columns to show how two variables may be dependent (contingent) upon each other; the table provides an easy way to calculate conditional probabilities.",
+          "evidence_clauses": [
+            "two variables may be dependent (contingent) upon each other",
+            "easy way to calculate conditional probabilities."
+          ]
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q20",
+      "split": "test",
+      "type": "direct",
+      "section": "Chapter 3 Key Terms",
+      "question": "In the Chapter 3 Key Terms glossary, what are Kolmogorov's three axioms of probability?",
+      "expected_answer": "For sample space S and events A, B in S: (1) 0 <= P(A) <= 1, (2) for any two mutually exclusive events A and B, P(A OR B) = P(A) + P(B), and (3) P(S) = 1.",
+      "gold_source_id": "openstax-intro-stats-2e",
+      "gold_page": 212,
+      "evidence_quote": "the foundation of statistics is given by the following 3 axioms (by A.N. Kolmogorov, 1930’s): Let S denote the sample space and A and B are two events in S. Then: • 0 ≤ P(A) ≤ 1 • If A and B are any two mutually exclusive events, then P(A OR B) = P(A) + P(B). • P(S) = 1",
+      "evidence_clauses": [
+        "3 axioms (by A.N. Kolmogorov, 1930’s):",
+        "0 ≤ P(A) ≤ 1",
+        "If A and B are any two mutually exclusive events, then P(A OR B) = P(A) + P(B).",
+        "P(S) = 1"
+      ],
+      "alternative_gold": [],
+      "filter": {
+        "chapter": "chapter_3",
+        "content_type": "review"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+[
+  {
+    "page": 87,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 99,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 111,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 127,
+    "issue": "low_text_density",
+    "char_count": 246,
+    "detail": "Page contains sparse text (figures/tables/calculator screenshots or missing vector math)."
+  },
+  {
+    "page": 180,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 181,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 182,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 188,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 189,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 197,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 202,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  },
+  {
+    "page": 203,
+    "issue": "omitted_inline_formula_glyphs",
+    "detail": "Blank gaps detected around '=' indicating omitted vector math expressions in PDF."
+  }
+]

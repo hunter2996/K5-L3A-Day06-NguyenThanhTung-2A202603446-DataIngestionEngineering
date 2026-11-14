@@ -1,0 +1,202 @@
+{
+  "audit_metadata": {
+    "auditor": "manual trace inspection from results/audit_samples.json and results/traces_{A,B,C}.json",
+    "coherence_scale": "0 = broken mid-word/mid-sentence or fragmented semantics; 1 = partially coherent (boundary merges unrelated tail/heading or clips a list/missing formula); 2 = self-contained coherent semantic unit",
+    "grounding_scale": "0 = insufficient/missing required evidence in top-3 (would force guessing); 1 = partial/fragmented evidence across top-3 with missing clause; 2 = full accurate evidence grounded in retrieved top-3"
+  },
+  "dimension_2_chunk_coherence": {
+    "summary": {
+      "A": {"total_score": 0, "max_score": 20, "mean_score": 0.0},
+      "B": {"total_score": 16, "max_score": 20, "mean_score": 1.6},
+      "C": {"total_score": 16, "max_score": 20, "mean_score": 1.6}
+    },
+    "positions": [
+      {
+        "pos_id": "coh_01",
+        "page": 17,
+        "label": "Ch.1 Introduction & Objectives opening",
+        "scores": {"A": 0, "B": 2, "C": 2},
+        "notes": {
+          "A": "p0017:fixed:000 cuts mid-sentence ('yourself the'); fixed:001 cuts mid-word ('\"fact').",
+          "B": "para:000 cleanly groups Figure 1.1 + Chapter Objectives bullets; para:001 holds complete Introduction text.",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_02",
+        "page": 18,
+        "label": "Sec. 1.1 Descriptive vs. Inferential Statistics",
+        "scores": {"A": 0, "B": 2, "C": 2},
+        "notes": {
+          "A": "fixed:000 cuts mid-word ('W'); fixed:001 starts 'bove ask you...' and cuts 'The formal methods are'.",
+          "B": "para:001 cleanly holds the full Descriptive vs. Inferential paragraph (531c) without broken clauses.",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_03",
+        "page": 22,
+        "label": "Sec. 1.2 Qualitative vs. Quantitative Data",
+        "scores": {"A": 0, "B": 1, "C": 1},
+        "notes": {
+          "A": "fixed:003 merges Collaborative Exercise, 1.2 heading, and partial Qualitative def ending mid-word ('catego').",
+          "B": "para:001 packs Collaborative Exercise + 1.2 heading + only first bullet ('• Qualitative'), splitting '• Quantitative' into para:002.",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_04",
+        "page": 31,
+        "label": "Sec. 1.2 Stratified & Cluster Sampling",
+        "scores": {"A": 0, "B": 2, "C": 2},
+        "notes": {
+          "A": "fixed:000 cuts 'and t'; fixed:001 starts 'e the stratified...' and cuts 'first dep'.",
+          "B": "para:001 holds full stratified random sample definition and college department example (822c).",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_05",
+        "page": 38,
+        "label": "Sec. 1.3 Frequency Tables & Rounding",
+        "scores": {"A": 0, "B": 1, "C": 1},
+        "notes": {
+          "A": "fixed:000 cuts 'how frequ'; fixed:001 starts 'd to organize...' and cuts 'intermediate resul'.",
+          "B": "para:000 mixes end of Sec. 1.2 wrap-up with Sec. 1.3 heading/intro while Answers and Rounding Off moves to para:001 (intact).",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_06",
+        "page": 78,
+        "label": "Sec. 2.1 Stem-and-Leaf Graph Example",
+        "scores": {"A": 0, "B": 1, "C": 1},
+        "notes": {
+          "A": "fixed:001 starts 'h), the pie...' and cuts heading '2.1 Stem-and-Leaf Grap' mid-word.",
+          "B": "para:000 trails with orphan heading '2.1 Stem-and-Leaf...' while para:001 holds the full rule + Example 2.1 + linearized table.",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_07",
+        "page": 87,
+        "label": "Sec. 2.2 Histogram Definition & Intervals",
+        "scores": {"A": 0, "B": 1, "C": 1},
+        "notes": {
+          "A": "fixed:000 cuts 'horizontal axis'; fixed:001 starts 's (adjoining)...' and cuts 'to the freque'.",
+          "B": "para:000 mixes Table 2.12 tail with 2.2 intro (100+ rule), separated from para:001 ('contiguous boxes'), which ends at missing vector formula RF = f/n ('then:').",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_08",
+        "page": 99,
+        "label": "Sec. 2.3 Percentiles & Median Position",
+        "scores": {"A": 0, "B": 2, "C": 2},
+        "notes": {
+          "A": "fixed:000 cuts data list mid-series ('1; 1; 2;'); fixed:001 starts 'et the idea...' and cuts '10, 1'.",
+          "B": "para:000 (893c) & para:001 (792c) cleanly preserve Q1/Median and Q3/IQR/outlier explanations intact.",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_09",
+        "page": 180,
+        "label": "Sec. 3.1 Sample Space & Event Terminology",
+        "scores": {"A": 0, "B": 2, "C": 2},
+        "notes": {
+          "A": "fixed:000 cuts 'divid'; fixed:001 starts 'qual to...' and cuts 'The sa'.",
+          "B": "para:001 (995c) keeps probability, experiment, outcome, sample space, and event definitions cleanly together.",
+          "C": "Identical chunks to B."
+        }
+      },
+      {
+        "pos_id": "coh_10",
+        "page": 185,
+        "label": "Sec. 3.2 Independent Events Condition",
+        "scores": {"A": 0, "B": 2, "C": 2},
+        "notes": {
+          "A": "fixed:000 cuts 'Sampling may be'; fixed:001 starts 'y that they...' and cuts 'each m'.",
+          "B": "para:000 (876c) cleanly groups independence condition, die example, and With replacement bullet without sentence cuts.",
+          "C": "Identical chunks to B."
+        }
+      }
+    ]
+  },
+  "dimension_3_metadata_usefulness": {
+    "test_hits_evaluated_per_strategy": 15,
+    "accuracy": {
+      "A": {
+        "page_chapter_content_type_accurate": "15/15 (100%)",
+        "section_exact_block_accurate": "14/15 (93.3%)",
+        "filter_compliance": "N/A (no filter applied; 8/9 scoped-query hits matched target filter, q20 rank 2 p.180 was ct=lesson)"
+      },
+      "B": {
+        "page_chapter_content_type_accurate": "15/15 (100%)",
+        "section_exact_block_accurate": "14/15 (93.3%)",
+        "filter_compliance": "N/A (no filter applied; 7/9 scoped-query hits matched target filter, q20 rank 2 p.180 & rank 3 p.18 drifted out of review/ch3)"
+      },
+      "C": {
+        "page_chapter_content_type_accurate": "15/15 (100%)",
+        "section_exact_block_accurate": "14/15 (93.3%)",
+        "filter_compliance": "3/3 filtered test queries (9/9 hits, 100%); overall 7/7 filtered queries (21/21 hits, 100%)"
+      }
+    },
+    "one_useful_field": "chapter + content_type: deterministic SQL filtering eliminated out-of-chapter/out-of-type distractions (rescuing dev q03 from p.84 ch2 distraction and restricting test q20 ranks 2-3 to ch3 review instead of p.18/p.180 lessons).",
+    "one_limitation": "Page-level PDF outline assignment is too coarse on mid-page section transitions: on q17 rank 3 (p.110), chunks covering 2.4 Box Plots exercises (Figure 2.15 / Try It 2.24 / Example 2.25) were tagged section='2.5 Measures of the Center of the Data' because Sec. 2.5 starts mid-page; similarly p.212 merges Key Terms and Chapter Review into one label."
+  },
+  "dimension_4_grounding_quality": {
+    "summary": {
+      "A": {"total_score": 6, "max_score": 10, "mean_score": 1.2},
+      "B": {"total_score": 10, "max_score": 10, "mean_score": 2.0},
+      "C": {"total_score": 10, "max_score": 10, "mean_score": 2.0}
+    },
+    "test_questions": [
+      {
+        "question_id": "q16",
+        "scores": {"A": 1, "B": 2, "C": 2},
+        "notes": {
+          "A": "Rank 1 covers placebo rationale but cuts mid-phrase ('then the power'); Rank 2 covers double-blind; fragments require stitching across broken boundary and Rank 1 alone is incomplete.",
+          "B": "Rank 1 (p.47, score 0.753) provides complete unbroken evidence for both placebo rationale and double-blind definition.",
+          "C": "Identical Rank 1 hit to B within chapter_1 filter."
+        }
+      },
+      {
+        "question_id": "q17",
+        "scores": {"A": 2, "B": 2, "C": 2},
+        "notes": {
+          "A": "Rank 1 (p.107, score 0.689) preserves the full outlier whisker NOTE cleanly.",
+          "B": "Rank 1 (p.107, score 0.718) preserves the full NOTE plus surrounding example context.",
+          "C": "Identical Rank 1 hit to B (filter=null)."
+        }
+      },
+      {
+        "question_id": "q18",
+        "scores": {"A": 1, "B": 2, "C": 2},
+        "notes": {
+          "A": "Rank 1 truncates at 'true for every data se', completely cutting off 'The most common exceptions occur in sets of discrete data.' across all top-3 hits.",
+          "B": "Rank 1 (p.117, score 0.708) contains all three skewness rules and the discrete-data exception intact.",
+          "C": "Identical Rank 1 hit to B within chapter_2 filter."
+        }
+      },
+      {
+        "question_id": "q19",
+        "scores": {"A": 2, "B": 2, "C": 2},
+        "notes": {
+          "A": "Rank 1 (p.195) and Rank 2 (p.212) both contain complete grounded contingency table definitions.",
+          "B": "Rank 1 (p.212) and Rank 2 (p.195) both provide complete definitions.",
+          "C": "Identical top-3 hits to B (filter=null)."
+        }
+      },
+      {
+        "question_id": "q20",
+        "scores": {"A": 0, "B": 2, "C": 2},
+        "notes": {
+          "A": "Rank 1 ends at 'Then:' before any of Kolmogorov's 3 axioms; Rank 2 & Rank 3 do not contain the axioms either (0/3 axioms present in top-3).",
+          "B": "Rank 1 (p.212, score 0.574) includes all three axioms cleanly.",
+          "C": "Rank 1 (p.212, score 0.574) includes all three axioms and Ranks 2-3 remain grounded within ch3 review."
+        }
+      }
+    ]
+  }
+}
